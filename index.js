@@ -1,5 +1,6 @@
 const contacts = require("./contacts.js");
-const argv = require("yargs").argv;
+const yargs = require("yargs");
+const { hideBin } = require("yargs/helpers");
 
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
@@ -14,20 +15,15 @@ async function invokeAction({ action, id, name, email, phone }) {
       const newContact = await contacts.addContact({ name, email, phone });
       return console.table(newContact);
     case "remove":
-      // ... id
-      break;
+      const removedContact = await contacts.removeContact(id);
+      return console.table(removedContact);
 
     default:
-      console.warn("\x1B[31m Unknown action type!");
+      console.warn(
+        `\x1B[31m "${action}" is unknown action type! \n Use actions: list, get, add or remove`
+      );
   }
 }
-
-invokeAction({ action: "list" });
-invokeAction({ action: "get", id: "1DEXoP8AuCGYc1YgoQ6hw" });
-invokeAction({ action: "get", id: "1DEXoP8AuCGYc1YgoQ6h" });
-invokeAction({
-  action: "add",
-  name: "Dany Ross",
-  email: "ross@fhkjghkj.net",
-  phone: "(000) 800-2949",
-});
+const arr = hideBin(process.argv);
+const { argv } = yargs(arr);
+invokeAction(argv);
