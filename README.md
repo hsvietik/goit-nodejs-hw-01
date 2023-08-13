@@ -12,6 +12,6 @@
   - node index.js --action add --name Mango --email mango@gmail.com --phone 322-22-22
   - [Command execution screenshot](https://monosnap.com/file/1R0VKxBI6BTXnNCOKmGLuZyYkVbiIH)
 
- - Delete the contact
+- Delete the contact
   - node index.js --action remove --id qdggE76Jtbfd9eWJHrssH
   - [Command execution screenshot](https://monosnap.com/file/O4a7ZtYVUGe66TPOJI9HklJtLTCIX9)
