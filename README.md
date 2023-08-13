@@ -1,8 +1,8 @@
 # goit-nodejs-hw-01 a console app to review, search, add or delete contacts
 
-Get and display the entire list of contacts 
-node index.js --action list
-[Command execution screenshot](https://monosnap.com/file/mAW4ZapheKIR8xwQTjQdkR9bjIPFlH)
+- Get and display the entire list of contacts 
+ - node index.js --action list
+ - [Command execution screenshot](https://monosnap.com/file/mAW4ZapheKIR8xwQTjQdkR9bjIPFlH)
 
 Get contact by id
 node index.js --action get --id 05olLMgyVQdWRwgKfg5J6
